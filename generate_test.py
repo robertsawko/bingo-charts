@@ -1,6 +1,5 @@
 from random import choice
 from string import ascii_uppercase, digits
-from numpy import dtype, empty
 from pandas import DataFrame
 
 
@@ -10,14 +9,8 @@ def generate_random_string(string_length):
         for _ in range(string_length))
 
 
-dtypes = dtype([
-          ('Pytanie', str),
-          ('Question', str),
-          ('Odpowiedz', str),
-          ('Answer', str)])
-data = empty(0, dtype=dtypes)
-
-df = DataFrame(data)
+df = DataFrame(
+    columns=['Pytanie', 'Question', 'Odpowiedz', 'Answer'])
 for _ in range(100):
     new_row = {
         column: generate_random_string(5)

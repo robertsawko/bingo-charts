@@ -1,5 +1,4 @@
 from pandas import read_excel
-from numpy import dtype, empty
 from numpy.random import choice
 from pandas import DataFrame
 
@@ -10,8 +9,8 @@ NO_OF_CHARTS = 10
 class BingoChart:
     def __init__(self, selected_items):
         self.items = selected_items
-        dtypes = dtype([(str(i), str) for i in range(CHART_SIZE)])
-        self.chart = DataFrame(empty(0, dtype=dtypes))
+        self.chart = DataFrame(columns=[
+            '{0}'.format(i) for i in range(CHART_SIZE)])
         for row_i in range(CHART_SIZE):
             new_row = {
                 column:
