@@ -1,0 +1,9 @@
+*.log
+*.swp
+*.fls
+*.pdf
+*.aux
+*.xlsx
+.~lock.*.xlsx#
+*.fdb_latexmk
+tables.tex
